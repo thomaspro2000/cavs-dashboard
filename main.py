@@ -1,8 +1,12 @@
-### This will be the main file that will do all the analysis###
+import cavs
+import nbateamid
+import pandas as pd
 
-#call the espn_data file to retrieve results
+# Please enter NBA Team name within the "Team Name variable"
 
-import espn_data
+nba_team_name = 'Los Angeles Clippers'
 
-dashboarddata = espn_data.gather_stats()
-print(dashboarddata)
+nba_id = nbateamid.findnbateamId(nba_team_name)
+
+data = cavs.gather_yearly_stats(nba_id)
+print(data)
